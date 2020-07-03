@@ -35,7 +35,6 @@ typedef NS_ENUM(NSInteger, AcaiaScaleWeightUnit) {
 @property (readonly) NSArray<AcaiaScale*>* scaleList;
 @property (nullable, readonly) AcaiaScale *connectedScale;
 
-@property (nonatomic, readwrite) BOOL enableBackgroundRecovery;
 
 + (instancetype)sharedManager;
 - (void)startScan:(NSTimeInterval)interval;
@@ -57,7 +56,9 @@ typedef NS_ENUM(NSInteger, AcaiaScaleWeightUnit) {
 - (void)pauseTimer;
 - (void)tare;
 - (void)connect;
+- (void)connectWithAutoReconnect;
 - (void)disconnect;
+- (void)disconnectTest;
 
 @end
 
